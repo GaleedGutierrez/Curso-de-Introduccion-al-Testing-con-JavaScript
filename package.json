@@ -1,0 +1,30 @@
+{
+	"name": "curso-de-introduccion-al-testing-con-javascript",
+	"version": "1.0.0",
+	"description": "Curso de Introducción al Testing con JavaScript (Platzi)",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GaleedGutierrez/Curso-de-Introduccion-al-Testing-con-JavaScript.git"
+	},
+	"keywords": [
+		"testing",
+		"jest",
+		"javascript"
+	],
+	"author": "Galeed Gutierrez <galeedeveloper@gmail.com> (https://galeedgutierrez.com/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/GaleedGutierrez/Curso-de-Introduccion-al-Testing-con-JavaScript/issues"
+	},
+	"homepage": "https://github.com/GaleedGutierrez/Curso-de-Introduccion-al-Testing-con-JavaScript#readme",
+	"devDependencies": {
+		"@babel/preset-env": "^7.23.9",
+		"@babel/preset-typescript": "^7.23.3",
+		"@types/jest": "^29.5.12",
+		"jest": "^29.7.0"
+	}
+}
