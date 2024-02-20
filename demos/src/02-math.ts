@@ -1,13 +1,15 @@
-export function sum (a: number, b: number) {
+export function sum(a: number, b: number) {
 	return a + b;
 }
 
-export function multiply (a: number, b: number) {
+export function multiply(a: number, b: number) {
 	return a * b;
 }
 
-export function divide (a: number, b: number) {
-	if (b === 0) return null;
+export function divide(a: number, b: number) {
+	if (b === 0) {
+		return null;
+	}
 
 	return a / b;
 }
