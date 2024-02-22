@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const express = require('express');
 const booksRouter = require('./books.router');
 
 /**
- *
- * @param app
+ * Levanta el servidor.
+ * @param {express} app Express function.
  */
 function routerApi(app) {
 	const router = new express.Router();

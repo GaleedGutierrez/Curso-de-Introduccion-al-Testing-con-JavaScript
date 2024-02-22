@@ -1,4 +1,4 @@
-test('test obj', () => {
+test('obj', () => {
 	const DATA = { name: 'Galeed', lastname: '' };
 
 	DATA.lastname = 'Gutierrez';
@@ -10,16 +10,16 @@ test('null', () => {
 
 	expect(DATA).toBeNull();
 	expect(DATA).toBeDefined();
-	expect(DATA).not.toBeUndefined();
+	expect(DATA).toBeDefined();
 });
 
-test('null', () => {
-	expect(true).toEqual(true);
-	expect(false).toEqual(false);
+test('Should be null', () => {
+	expect(true).toBe(true);
+	expect(false).toBe(false);
 	expect(0).toBeFalsy();
 	expect('').toBeFalsy();
 	expect(false).toBeFalsy();
-	expect([]).toBeTruthy();
+	expect(null).toBeNull();
 });
 
 test('string', () => {

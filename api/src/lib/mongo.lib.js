@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { MongoClient, ObjectId } = require('mongodb');
 const { config } = require('../config');
 

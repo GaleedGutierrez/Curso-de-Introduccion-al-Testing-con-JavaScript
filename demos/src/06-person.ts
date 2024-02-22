@@ -9,7 +9,7 @@ export class Person {
 		this.height = height;
 	}
 
-	calcIMC() {
+	calcIMC(): string {
 		const result = Math.round(this.weight / (this.height * this.height));
 
 		if (result < 0) {

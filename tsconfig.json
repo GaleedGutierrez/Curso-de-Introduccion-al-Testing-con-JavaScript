@@ -36,6 +36,10 @@
 		}
 	},
 
+	"parserOptions": {
+		"project": true
+	},
+
 	"ts-node": {
 		"transpileOnly": true,
 		"files": true,
@@ -44,6 +48,6 @@
 		}
 	},
 	"extends": "@tsconfig/recommended/tsconfig.json",
-	"include": ["./**/*.ts"],
+	"include": ["./**/*.ts", "api/src/services/books.service.test.js"],
 	"exclude": ["node_modules"]
 }
