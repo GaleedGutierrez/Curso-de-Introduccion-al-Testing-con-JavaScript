@@ -1,12 +1,12 @@
-export function sum(a: number, b: number) {
+export function sum(a: number, b: number): number {
 	return a + b;
 }
 
-export function multiply(a: number, b: number) {
+export function multiply(a: number, b: number): number {
 	return a * b;
 }
 
-export function divide(a: number, b: number) {
+export function divide(a: number, b: number): number | null {
 	if (b === 0) {
 		return null;
 	}
@@ -31,7 +31,7 @@ export function calculatePrice({
 	distance: number;
 	tokenPrice: number;
 	isRoundtrip: boolean;
-}) {
+}): number {
 	const PRICE = LOWERED_FLAG + TRIP_CONST * distance * tokenPrice;
 
 	return isRoundtrip ? PRICE * 2 : PRICE;

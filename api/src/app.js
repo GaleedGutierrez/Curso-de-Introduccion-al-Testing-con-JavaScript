@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const express = require('express');
 const cors = require('cors');
 const routerApi = require('./routes');
