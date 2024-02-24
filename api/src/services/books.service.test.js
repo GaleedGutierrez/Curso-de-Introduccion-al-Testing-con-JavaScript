@@ -1,6 +1,13 @@
-const BooksService = require('./books.service.js');
+/**
+ * @typedef Book
+ * @property {string} _id ID of the book
+ * @property {string} name Name of the book
+ * @property {string} price	Price of the book
+ */
 
-const fakeBooks = [{ _id: 1, name: 'Book 1' }];
+const BooksService = require('./books.service.js');
+const { generateManyBooks } = require('../fakes/book.fake.js');
+
 const mockGetAll = jest.fn();
 
 jest.mock('../lib/mongo.lib', () =>
@@ -23,6 +30,10 @@ describe('Test for BooksService.', () => {
 	describe('Test for getBooks.', () => {
 		test('Should return an array of books.', async () => {
 			// Arrange
+			const fakeBooks = generateManyBooks(4);
+
+			// eslint-disable-next-line no-console
+			console.log(fakeBooks);
 			mockGetAll.mockResolvedValue(fakeBooks);
 
 			//Act
@@ -31,20 +42,24 @@ describe('Test for BooksService.', () => {
 			// eslint-disable-next-line no-console
 			console.log(BOOKS);
 			// Assert
-			expect(BOOKS).toHaveLength(1);
+			expect(BOOKS).toHaveLength(fakeBooks.length);
 			expect(mockGetAll).toHaveBeenCalled();
 			expect(mockGetAll).toHaveBeenCalledWith('books', {});
 			expect(mockGetAll).toHaveBeenCalledTimes(1);
 		});
 		test("Should be a book's name.", async () => {
 			// Arrange
-			mockGetAll.mockResolvedValue([{ _id: 1, name: 'Harry Potter' }]);
+			const fakeBooks = generateManyBooks(3);
+
+			// eslint-disable-next-line no-console
+			console.log(fakeBooks);
+			mockGetAll.mockResolvedValue(fakeBooks);
 
 			//Act
 			const BOOKS = await service.getBooks();
 
 			// Assert
-			expect(BOOKS[0].name).toBe('Harry Potter');
+			expect(BOOKS[0].name).toBe(fakeBooks[0].name);
 		});
 	});
 });
