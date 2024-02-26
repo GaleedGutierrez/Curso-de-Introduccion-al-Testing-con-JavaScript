@@ -218,7 +218,14 @@ module.exports = {
 
 		// Jest and testing library
 		{
-			files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
+			files: [
+				'*.test.ts',
+				'*.test.js',
+				'*.spec.ts',
+				'*.spec.js',
+				'*.e2e.ts',
+				'*.e2e.js',
+			],
 			extends: [
 				'plugin:jest/recommended',
 				'plugin:jest/style',
