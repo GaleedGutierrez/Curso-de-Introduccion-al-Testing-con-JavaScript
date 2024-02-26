@@ -5,7 +5,7 @@ module.exports = {
 		browser: true,
 		amd: true,
 		node: true,
-		jest: true,
+		'jest/globals': true,
 	},
 	extends: [
 		'eslint:recommended',
@@ -295,6 +295,7 @@ module.exports = {
 		'prefer-arrow-callback': 'error', // Opcional
 
 		// Style
+		'arrow-body-style': ['error', 'as-needed'],
 		curly: 'error',
 		'lines-between-class-members': [
 			'error',

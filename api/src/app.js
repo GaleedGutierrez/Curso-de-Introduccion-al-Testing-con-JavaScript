@@ -17,4 +17,8 @@ const createApp = () => {
 	return app;
 };
 
+// fetch('http://127.0.0.1:3000/')
+// 	.then((response) => response.text())
+// 	.then((response) => console.log(response));
+
 module.exports = createApp;
