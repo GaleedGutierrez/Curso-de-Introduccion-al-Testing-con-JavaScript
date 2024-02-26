@@ -11,12 +11,10 @@ const { generateManyBooks } = require('../fakes/book.fake.js');
 const mockGetAll = jest.fn();
 
 jest.mock('../lib/mongo.lib', () =>
-	jest.fn().mockImplementation(() => {
-		return {
-			getAll: mockGetAll,
-			create: () => {},
-		};
-	}),
+	jest.fn().mockImplementation(() => ({
+		getAll: mockGetAll,
+		create: () => {},
+	})),
 );
 describe('Test for BooksService.', () => {
 	/** @type {typeof BooksService} */
