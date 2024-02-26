@@ -9,18 +9,18 @@ describe('Test for hello endpoint', () => {
 		app = createApp();
 		server = app.listen(3001);
 	});
+
 	afterAll(async () => {
 		await server.close();
 	});
 
 	describe('Test for [GET] /', () => {
-		test('Should return "Hello World!"', () => {
+		test('Should return "Hello World!"', () =>
 			request(app)
 				.get('/')
 				.expect(200)
 				.then((response) => {
-					expect(response.text).toEqual('Hello World!');
-				});
-		});
+					expect(response.text).toBe('Hello World!');
+				}));
 	});
 });
