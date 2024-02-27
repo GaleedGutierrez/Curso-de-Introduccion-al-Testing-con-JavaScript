@@ -10,12 +10,14 @@ class MongoLib {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
+
 		this.dbName = DB_NAME;
 	}
 
 	async connect() {
 		if (!MongoLib.connection) {
 			await this.client.connect();
+
 			// eslint-disable-next-line require-atomic-updates
 			MongoLib.connection = this.client.db(this.dbName);
 

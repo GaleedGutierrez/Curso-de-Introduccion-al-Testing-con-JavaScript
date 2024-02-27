@@ -216,7 +216,7 @@ module.exports = {
 			plugins: ['jsdoc'],
 		},
 
-		// Jest and testing library
+		// Testing
 		{
 			files: [
 				'*.test.ts',
@@ -229,10 +229,14 @@ module.exports = {
 			extends: [
 				'plugin:jest/recommended',
 				'plugin:jest/style',
-				'plugin:jest-dom/recommended',
-				'plugin:testing-library/dom',
+				// 'plugin:jest-dom/recommended',
+				// 'plugin:testing-library/dom',
+				'plugin:playwright/recommended',
 			],
-			plugins: ['jest', 'jest-dom', 'testing-library'],
+			plugins: ['jest' /*, 'jest-dom', 'testing-library'*/],
+			// rules: {
+			// 	'prefer-equality-matcher': 'error',
+			// },
 		},
 	],
 	parserOptions: {
@@ -250,6 +254,7 @@ module.exports = {
 		'check-file',
 		'editorconfig',
 		'sort-class-members',
+		'@stylistic',
 	],
 	rules: {
 		'prettier/prettier': 'error',
@@ -304,15 +309,16 @@ module.exports = {
 		// Style
 		'arrow-body-style': ['error', 'as-needed'],
 		curly: 'error',
-		'lines-between-class-members': [
+		'@stylistic/lines-between-class-members': [
 			'error',
 			'always',
 			{ exceptAfterSingleLine: true },
 		],
-		'padding-line-between-statements': [
+		'@stylistic/padding-line-between-statements': [
 			'error',
 			{ blankLine: 'always', prev: '*', next: 'return' },
 			{ blankLine: 'always', prev: '*', next: 'block-like' },
+			{ blankLine: 'always', prev: 'block-like', next: '*' },
 			{ blankLine: 'always', prev: ['case', 'default'], next: '*' },
 			{ blankLine: 'always', prev: 'directive', next: '*' },
 			{ blankLine: 'any', prev: 'directive', next: 'directive' },
@@ -326,18 +332,18 @@ module.exports = {
 				prev: ['const', 'let', 'var'],
 				next: ['const', 'let', 'var'],
 			},
-			{ blankLine: 'always', prev: 'block-like', next: '*' },
-			{ blankLine: 'always', prev: 'expression', next: '*' }, // veremos
-			{ blankLine: 'always', prev: '*', next: 'expression' }, // veremos
-			{ blankLine: 'any', prev: 'expression', next: 'expression' }, // veremos
+			{ blankLine: 'always', prev: 'expression', next: '*' },
+			{ blankLine: 'always', prev: '*', next: 'expression' },
+			{ blankLine: 'any', prev: 'expression', next: 'expression' },
 			{ blankLine: 'always', prev: 'import', next: '*' },
 			{ blankLine: 'any', prev: 'import', next: 'import' },
 			{ blankLine: 'always', prev: 'export', next: '*' },
 			{ blankLine: 'always', prev: '*', next: 'export' },
+			{ blankLine: 'any', prev: 'export', next: 'export' },
 			{ blankLine: 'always', prev: 'if', next: '*' },
 		],
 		'sort-class-members/sort-class-members': [
-			2,
+			'error',
 			{
 				order: [
 					'[properties]',
