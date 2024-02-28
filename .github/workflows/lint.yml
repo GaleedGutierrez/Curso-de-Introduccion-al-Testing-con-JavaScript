@@ -3,7 +3,7 @@ on: push
 jobs:
     lint:
         runs-on: ubuntu-latest
-        name: Eslint - Stylelint
+        name: 📏 Lint
         steps:
             - name: 👍 Checkout
               uses: actions/checkout@v2
@@ -11,8 +11,8 @@ jobs:
             - name: 📥 Install Dependencies
               run: npm ci
 
-            - name: 🌹 ESLint
+            - name: 🔮 ESLint
               run: npm run lint
 
-            # - name: 💄 StyleLint
+            # - name: 👔 StyleLint
             #   run: npm run stylelint
