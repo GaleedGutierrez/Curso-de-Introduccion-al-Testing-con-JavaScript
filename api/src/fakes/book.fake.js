@@ -9,7 +9,7 @@ const { faker } = require('@faker-js/faker');
 
 /** @returns {Book} Return a book. */
 const generateOneBook = () => ({
-	_id: globalThis.crypto.randomUUID(),
+	_id: faker.string.uuid(),
 	name: faker.commerce.productName(),
 	price: faker.commerce.price(),
 });
